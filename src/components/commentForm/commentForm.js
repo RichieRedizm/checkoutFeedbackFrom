@@ -15,7 +15,6 @@ class CommentForm extends React.PureComponent {
       }
     };
 
-    // bind context to methods
     this.handleFieldChange = this.handleFieldChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -24,7 +23,6 @@ class CommentForm extends React.PureComponent {
    * Handle form input field changes & update the state
    */
   handleFieldChange = event => {
-	// console.log('handleFieldChange', event.target)
     const { value, name } = event.target;
 
     this.setState({
@@ -47,40 +45,8 @@ class CommentForm extends React.PureComponent {
       return;
     }
 
-    // loading status and clear error
-    this.setState({ error: "", loading: true });
-
-    // persist the comments on server
 		let { comment } = this.state;
-
-		console.log('onSubmit', this.state)
 		this.props.addComment(comment);
-  //   fetch("http://localhost:3000", {
-  //     method: "post",
-  //     body: JSON.stringify(comment)
-  //   })
-	// 	.then(res => res.json())
-	// 	.then(res => {
-	// 		if (res.error) {
-	// 			this.setState({ loading: false, error: res.error });
-	// 		} else {
-	// 			// add time return from api and push comment to parent state
-	// 			comment.time = res.time;
-	// 			this.props.addComment(comment);
-
-	// 			// clear the message box
-	// 			this.setState({
-	// 				loading: false,
-	// 				comment: { ...comment, message: "" }
-	// 			});
-	// 		}
-	// 	})
-	// 	.catch(err => {
-	// 		this.setState({
-	// 			error: "Something went wrong while submitting form.",
-	// 			loading: false
-	// 		});
-	// 	});
 
   }
 
@@ -146,7 +112,7 @@ class CommentForm extends React.PureComponent {
           {this.renderError()}
 
           <div className='form-group'>
-            <button disabled={this.state.loading} className='btn btn-primary'>
+            <button className='btn btn-primary'>
               Comment ➤
             </button>
           </div>
