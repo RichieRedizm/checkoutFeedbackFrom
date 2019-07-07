@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class CommentForm extends React.PureComponent {
+class CommentForm extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -8,9 +8,9 @@ export default class CommentForm extends React.PureComponent {
       error: '',
 
       comment: {
-		name: '',
-		email: '',
-		rating: '',
+				name: '',
+				email: '',
+				rating: '',
         message: ''
       }
     };
@@ -24,6 +24,7 @@ export default class CommentForm extends React.PureComponent {
    * Handle form input field changes & update the state
    */
   handleFieldChange = event => {
+	// console.log('handleFieldChange', event.target)
     const { value, name } = event.target;
 
     this.setState({
@@ -39,10 +40,53 @@ export default class CommentForm extends React.PureComponent {
    * Form submit handler
    */
   onSubmit(e) {
-    // prevent default form submission
-    e.preventDefault();
-    //...
+		e.preventDefault();
+
+    if (!this.isFormValid()) {
+      this.setState({ error: "Name and Message fields are required." });
+      return;
+    }
+
+    // loading status and clear error
+    this.setState({ error: "", loading: true });
+
+    // persist the comments on server
+		let { comment } = this.state;
+
+		console.log('onSubmit', this.state)
+		this.props.addComment(comment);
+  //   fetch("http://localhost:3000", {
+  //     method: "post",
+  //     body: JSON.stringify(comment)
+  //   })
+	// 	.then(res => res.json())
+	// 	.then(res => {
+	// 		if (res.error) {
+	// 			this.setState({ loading: false, error: res.error });
+	// 		} else {
+	// 			// add time return from api and push comment to parent state
+	// 			comment.time = res.time;
+	// 			this.props.addComment(comment);
+
+	// 			// clear the message box
+	// 			this.setState({
+	// 				loading: false,
+	// 				comment: { ...comment, message: "" }
+	// 			});
+	// 		}
+	// 	})
+	// 	.catch(err => {
+	// 		this.setState({
+	// 			error: "Something went wrong while submitting form.",
+	// 			loading: false
+	// 		});
+	// 	});
+
   }
+
+	isFormValid() {
+    return this.state.comment.name !== "" && this.state.comment.message !== "";
+	}
 
   renderError() {
     return this.state.error ? (
@@ -76,7 +120,7 @@ export default class CommentForm extends React.PureComponent {
             />
           </div>
 
-		  <div className='form-group'>
+		  		<div className='form-group'>
             <input
               onChange={this.handleFieldChange}
               value={this.state.comment.rating}
@@ -111,3 +155,5 @@ export default class CommentForm extends React.PureComponent {
     );
   }
 }
+
+export default CommentForm

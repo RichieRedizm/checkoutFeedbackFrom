@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from './images/checkout_logo.png'
-import './feedbackForm.css'
-import CommentForm from './components/commentForm/commentForm'
+import './FeedbackForm.css'
+import CommentForm from './components/CommentForm/CommentForm'
+import CommentList from './components/CommentList/CommentList'
 
 class FeedbackForm extends React.PureComponent {
 	constructor(props) {
@@ -10,7 +11,19 @@ class FeedbackForm extends React.PureComponent {
 		this.state = {
 		  comments: [],
 		  loading: false
-		};
+		}
+		// bind context to methods
+		this.addComment = this.addComment.bind(this);
+	}
+
+	/**
+	 * Handle form add comment
+	 */
+	addComment(comment) {
+		this.setState({
+			loading: false,
+			comments: [comment, ...this.state.comments]
+		});
 	}
 
 	render() {
@@ -21,9 +34,12 @@ class FeedbackForm extends React.PureComponent {
 					<h1 className='App-title'>Checkout.com Form Comments</h1>
 				</header>
 
-				<CommentForm />
+				<CommentForm addComment={this.addComment}/>
 
-				{/* <commentList /> */}
+				<CommentList
+					loading={this.state.loading}
+					comments={this.state.comments}
+				/>
 			</div>
 		);
 	}
