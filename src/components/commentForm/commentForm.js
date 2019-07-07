@@ -4,13 +4,12 @@ class CommentForm extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
       error: '',
 
       comment: {
 				name: '',
 				email: '',
-				rating: '',
+				rating: null,
         message: ''
       }
     };
@@ -46,8 +45,16 @@ class CommentForm extends React.PureComponent {
     }
 
 		let { comment } = this.state;
+		comment.rating = parseInt(comment.rating)
 		this.props.addComment(comment);
-
+		this.setState({
+			comment: {
+				name: '',
+				email: '',
+				rating: '',
+        message: ''
+      }
+		});
   }
 
 	isFormValid() {
@@ -56,7 +63,7 @@ class CommentForm extends React.PureComponent {
 
   renderError() {
     return this.state.error ? (
-      <div className='alert alert-danger'>{this.state.error}</div>
+      <div className='alert'>{this.state.error}</div>
     ) : null;
   }
 
@@ -93,7 +100,7 @@ class CommentForm extends React.PureComponent {
               className='form-control'
               placeholder='Your Rating'
               name='rating'
-              type='text'
+              type='number'
             />
           </div>
 

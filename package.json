@@ -1,13 +1,14 @@
 {
   "name": "checkout_feedback_form",
   "version": "0.1.0",
-	"private": true,
-	"license": "UNLICENSED",
+  "private": true,
+  "license": "UNLICENSED",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-		"react-scripts": "3.0.1"
-	},
+    "react-scripts": "3.0.1",
+    "react-trend": "^1.2.5"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
