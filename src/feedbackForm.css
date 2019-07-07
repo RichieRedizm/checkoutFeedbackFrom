@@ -20,6 +20,7 @@
 .form-header h1 {
 	 padding: 0 20px;
 }
+
 a:link {
   color: #7564bd;
 }
@@ -31,4 +32,10 @@ a:link {
   to {
     transform: rotate(360deg);
   }
+}
+
+/**
+ form styles */
+ .form-field {
+	width: 20vw;
 }

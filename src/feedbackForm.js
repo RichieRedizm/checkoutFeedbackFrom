@@ -41,12 +41,9 @@ class FeedbackForm extends React.PureComponent {
 	 * Handle get rating from each comment
 	 */
 	getRatings(comments) {
-		// console.log('getRatings comments', comments)
-		let ratings = this.state.comments.map((comment) => {
+		return this.state.comments.map((comment) => {
 			return comment.rating
 		})
-		console.log('getRatings ratings', ratings)
-		return ratings
 	}
 
 	render() {

@@ -9,7 +9,7 @@ class CommentForm extends React.PureComponent {
       comment: {
 				name: '',
 				email: '',
-				rating: null,
+				rating: '',
         message: ''
       }
     };
@@ -40,7 +40,7 @@ class CommentForm extends React.PureComponent {
 		e.preventDefault();
 
     if (!this.isFormValid()) {
-      this.setState({ error: "Name and Message fields are required." });
+      this.setState({ error: "Name and Rating are required fields." });
       return;
     }
 
@@ -58,7 +58,7 @@ class CommentForm extends React.PureComponent {
   }
 
 	isFormValid() {
-    return this.state.comment.name !== "" && this.state.comment.message !== "";
+    return this.state.comment.name !== "" && this.state.comment.rating !== "";
 	}
 
   renderError() {
@@ -75,8 +75,8 @@ class CommentForm extends React.PureComponent {
             <input
               onChange={this.handleFieldChange}
               value={this.state.comment.name}
-              className='form-control'
-              placeholder='Your Name'
+              className='form-field'
+              placeholder='Name'
               name='name'
               type='text'
             />
@@ -86,8 +86,8 @@ class CommentForm extends React.PureComponent {
             <input
               onChange={this.handleFieldChange}
               value={this.state.comment.email}
-              className='form-control'
-              placeholder='Your Email'
+              className='form-field'
+              placeholder='Email'
               name='email'
               type='email'
             />
@@ -97,10 +97,12 @@ class CommentForm extends React.PureComponent {
             <input
               onChange={this.handleFieldChange}
               value={this.state.comment.rating}
-              className='form-control'
-              placeholder='Your Rating'
+              className='form-field'
+              placeholder='Rating'
               name='rating'
-              type='number'
+							type='number'
+							min='0'
+							max='100'
             />
           </div>
 
@@ -108,21 +110,20 @@ class CommentForm extends React.PureComponent {
             <textarea
               onChange={this.handleFieldChange}
               value={this.state.comment.message}
-              className='form-control'
-              placeholder='Your Comment'
+              className='form-field'
+              placeholder='Comment'
               name='message'
               rows='5'
             />
           </div>
-
-
-          {this.renderError()}
 
           <div className='form-group'>
             <button className='btn btn-primary'>
               Comment ➤
             </button>
           </div>
+
+					{this.renderError()}
         </form>
       </React.Fragment>
     );
