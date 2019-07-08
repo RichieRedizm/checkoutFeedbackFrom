@@ -4,7 +4,7 @@ import CommentForm from './CommentForm'
 
 
 describe('CommentForm', () => {
-	it('Should render a list of comments with default mock data', () => {
+	it('Should render the comments form', () => {
 
 		  const component = Renderer.create(<CommentForm />)
 		  const tree = component.toJSON()
