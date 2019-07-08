@@ -98,7 +98,7 @@ class CommentForm extends React.PureComponent {
               onChange={this.handleFieldChange}
               value={this.state.comment.rating}
               className='form-field'
-              placeholder='Rating'
+              placeholder='Rating 0-100'
               name='rating'
 							type='number'
 							min='0'
@@ -118,7 +118,7 @@ class CommentForm extends React.PureComponent {
           </div>
 
           <div className='form-group'>
-            <button className='btn btn-primary'>
+            <button className='btn btn-primary form-field'>
               Comment ➤
             </button>
           </div>

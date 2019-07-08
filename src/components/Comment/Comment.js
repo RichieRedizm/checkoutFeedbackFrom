@@ -5,9 +5,9 @@ function Comment(props) {
 
   return (
 	<div className="comment">
-		<h6 className="name field">{name}</h6>
+		<h4 className="name field">{name}</h4>
 		<span>{email}</span>
-		<span>{rating}</span>
+		<span className='rating'>{rating}</span>
 		<span>{message}</span>
 	</div>
   );

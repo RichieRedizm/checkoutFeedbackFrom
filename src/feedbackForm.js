@@ -49,13 +49,12 @@ class FeedbackForm extends React.PureComponent {
 	render() {
 		let { comments } = this.state;
 		return (
-			<div className='feedback_form'>
+			<div className='checkout-form'>
 				<header className='form-header'>
 					<img src={logo} className='checkout-logo' alt='logo' />
 					<h1 className='App-title'>Checkout.com Form Comments</h1>
 				</header>
 
-				<CommentForm addComment={this.addComment}/>
 				<Trend
 					smooth
 					autoDraw
@@ -67,7 +66,11 @@ class FeedbackForm extends React.PureComponent {
 					strokeWidth={3.8}
 					strokeLinecap={'square'}
 				/>
-				<CommentList comments={this.state.comments}/>
+				<div className='feedback_form'>
+					<CommentForm addComment={this.addComment}/>
+
+					<CommentList comments={this.state.comments}/>
+				</div>
 			</div>
 		);
 	}
