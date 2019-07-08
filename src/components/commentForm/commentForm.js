@@ -98,11 +98,11 @@ class CommentForm extends React.PureComponent {
               onChange={this.handleFieldChange}
               value={this.state.comment.rating}
               className='form-field'
-              placeholder='Rating 0-100'
+              placeholder='Rating 1-5'
               name='rating'
 							type='number'
-							min='0'
-							max='100'
+							min='1'
+							max='5'
             />
           </div>
 
