@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentForm Should render a list of comments with default mock data 1`] = `
+<form
+  method="post"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-field"
+      name="name"
+      onChange={[Function]}
+      placeholder="Name"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-field"
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      type="email"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-field"
+      max="5"
+      min="1"
+      name="rating"
+      onChange={[Function]}
+      placeholder="Rating 1-5"
+      type="number"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <textarea
+      className="form-field"
+      name="message"
+      onChange={[Function]}
+      placeholder="Comment"
+      rows="5"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-primary form-field"
+    >
+      Comment ➤
+    </button>
+  </div>
+</form>
+`;
