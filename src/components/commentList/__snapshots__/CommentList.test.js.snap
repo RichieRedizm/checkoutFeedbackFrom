@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentList Should render a list of comments with default mock data 1`] = `
+<div
+  className="comment-list"
+>
+  <div
+    className="comment"
+  >
+    <h4
+      className="name field"
+    >
+      Joe Blogs
+    </h4>
+    <span>
+      joeblogs@gmail.com
+    </span>
+    <span
+      className="rating"
+    >
+      2
+    </span>
+    <span>
+      Example message
+    </span>
+  </div>
+  <div
+    className="comment"
+  >
+    <h4
+      className="name field"
+    >
+      Richard Oakey
+    </h4>
+    <span>
+      richieredizm@gmail.com
+    </span>
+    <span
+      className="rating"
+    >
+      1
+    </span>
+    <span>
+      Another example message
+    </span>
+  </div>
+  <div
+    className="comment"
+  >
+    <h4
+      className="name field"
+    >
+      Testy McTester
+    </h4>
+    <span>
+      testing@example.com
+    </span>
+    <span
+      className="rating"
+    >
+      5
+    </span>
+    <span>
+      And we have provided another example message
+    </span>
+  </div>
+</div>
+`;

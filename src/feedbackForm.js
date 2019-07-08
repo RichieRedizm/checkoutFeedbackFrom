@@ -4,25 +4,13 @@ import './FeedbackForm.css'
 import CommentForm from './components/CommentForm/CommentForm'
 import CommentList from './components/CommentList/CommentList'
 import Trend from 'react-trend';
+import Data from './components/data'
 
 class FeedbackForm extends React.PureComponent {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-		  comments: [{
-			name: 'Joe Blogs',
-			email: 'joeblogs@gmail.com',
-			rating: 0,
-			message: 'Example message so chart has data'
-		  },
-		  {
-			name: 'Richard Oakey',
-			email: 'richieredizm@gmail.com',
-			rating: 4,
-			message: 'Another example message so chart has data'
-		  }]
-		}
+		this.state = {...Data}
 
 		this.addComment = this.addComment.bind(this);
 		this.getRatings = this.getRatings.bind(this);
