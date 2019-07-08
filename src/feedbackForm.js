@@ -19,7 +19,7 @@ class FeedbackForm extends React.PureComponent {
 		  {
 			name: 'Richard Oakey',
 			email: 'richieredizm@gmail.com',
-			rating: 66,
+			rating: 4,
 			message: 'Another example message so chart has data'
 		  }]
 		}
