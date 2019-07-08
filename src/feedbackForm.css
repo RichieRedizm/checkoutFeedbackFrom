@@ -22,7 +22,9 @@
 a:link {
   color: #7564bd;
 }
-
+.checkout-form {
+	font-family: 'Muli', sans-serif;
+}
 .feedback_form {
 	text-align: left;
 	margin: 0 2vw;
