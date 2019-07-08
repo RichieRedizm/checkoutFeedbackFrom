@@ -11,16 +11,16 @@ class FeedbackForm extends React.PureComponent {
 
 		this.state = {
 		  comments: [{
-			name: 'Richard Oakey',
-			email: 'richieredizm@gmail.com',
-			rating: 9,
+			name: 'Joe Blogs',
+			email: 'joeblogs@gmail.com',
+			rating: 0,
 			message: 'Example message so chart has data'
 		  },
 		  {
 			name: 'Richard Oakey',
 			email: 'richieredizm@gmail.com',
-			rating: 22,
-			message: 'Example message so chart has data'
+			rating: 66,
+			message: 'Another example message so chart has data'
 		  }]
 		}
 
