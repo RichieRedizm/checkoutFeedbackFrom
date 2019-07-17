@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './images/checkout_logo.png'
+// import logo from './images/case_study.png'
 import './feedbackForm.css'
 import CommentForm from './components/CommentForm/CommentForm'
 import CommentList from './components/CommentList/CommentList'
@@ -39,8 +39,8 @@ class FeedbackForm extends React.PureComponent {
 		return (
 			<div className='checkout-form'>
 				<header className='form-header'>
-					<img src={logo} className='checkout-logo' alt='logo' />
-					<h1 className='App-title'>Checkout.com Form Comments</h1>
+					{/* <img src={logo} className='checkout-logo' alt='logo' /> */}
+					<h1 className='App-title'>Form Comments</h1>
 				</header>
 
 				<Trend
